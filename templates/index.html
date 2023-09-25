@@ -1,0 +1,303 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Wine Quality</title>
+
+
+    
+    <style>
+
+        body{
+            background-image : url(https://businesstoys.in/assets/blog/what-is-the-salary-of-a-data-scientist-in-india/3.jpg);
+            background-size: cover;
+        }
+      
+    </style>e
+    
+   
+
+
+
+
+        
+<h1><p style="color:red;">Red Wine Quality </p></h1>
+<h2><p style="color:rgb(200, 255, 0);">Fill the form</p></h2>
+<form method="GET" action="/predict_quality">
+
+<h3>
+    <label> <p style="color:rgb(191, 191, 211);">Fixed Acidity:  
+    <input type = "text" name = "fixed_acidity">
+    
+    </select> </p></label>
+    
+    
+    <label><p style="color:rgb(235, 235, 246);">Volatile Acidity: 
+    <input type = "text"name = "volatile_acidity">
+    
+    </select> </p></label>
+         
+     
+    <label><p style="color:rgb(234, 234, 241);">Citric Acid: 
+    <input type = "text" name = "citric_acid">
+    
+    </select></p></label>
+       
+
+    <label><p style="color:rgb(234, 234, 241);">Residual Sugar:
+    <input type = "text" name = "residual_sugar">
+   
+    </select> </p></label>
+       
+  
+
+    <label><p style="color:rgb(243, 243, 248);">Chlorides: 
+    <input type = "text" name = "chlorides">
+    </select></p>
+    </label>
+        
+
+        <label><p style="color:rgb(237, 237, 242);">Free sulfur dioxide: 
+        <input type = "text" name = "free_sulfur_dioxide">
+        
+        </select></p></label>
+       
+        <label><p style="color:rgb(245, 245, 253);">Total Sulfur Dioxide: 
+        <input type = "text"name = "total_sulfur_dioxide">
+        
+        </select>
+        </p></label>
+        
+    
+        <label><p style="color:rgb(235, 235, 246);">Density: 
+        <input type = "text"name = "density">
+       
+        </select></p></label>
+
+        
+
+        <label><p style="color:rgb(244, 244, 252);">PH: 
+        <input type = "text" name = "pH">
+        
+        </select></p></label>
+
+        
+
+        <label><p style="color:rgb(244, 244, 252);">Sulphates: 
+        <input type = "text" name = "sulphates">
+        
+        </select></p></label>
+    
+        
+
+        <label><p style="color:rgb(244, 244, 252);">Alcohol: 
+        <input type = "text" name = "alcohol">
+
+        </select></p></label>
+
+       
+        
+
+        
+        
+</h4>   
+        
+
+<br>
+        <input type = "submit" value="SUBMIT">
+
+<br>
+        <h1>
+            <strong><p style="color:red;">Red wine quality : <b>{{prediction}}</b></strong>
+            </p>
+        </h1>
+       
+    </form>
+</body>
+</html>
+
+
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Red Wine Quality</title>
+     <style>
+ 
+ 
+ * {
+   box-sizing: border-box;
+ }
+ 
+ body {
+   margin: 0;
+   font-family: Arial;
+   font-size: 9px;
+ }
+ 
+ #myVideo {
+   position: fixed;
+   right: 0;
+   bottom: 0;
+   min-width: 100%; 
+   min-height: 100%;
+ }
+ 
+ .content {
+   position: fixed;
+   bottom: 0;
+   /* background: rgba(11, 10, 10, 0.925); */
+   color: #f1f1f1;
+   width: 100%;
+   padding: 20px;
+ }
+ 
+ #myBtn {
+   width: 200px;
+   font-size: 18px;
+   padding: 10px;
+   border: none;
+   background: #ffffff;
+   color: #fff;
+   cursor: pointer;
+ }
+ 
+ #myBtn:hover {
+   background: #ddd;
+   color: rgb(254, 244, 244);
+ }
+ 
+ </style>
+ </head>
+ <body>
+ 
+ 
+ 
+ <video autoplay muted loop id="myVideo">
+   <source src="https://joy1.videvo.net/videvo_files/video/free/2014-07/large_watermarked/WINE_POUR_SLOW_MOTION_preview.mp4" type="video/mp4">
+   Your browser does not support HTML5 video.
+ </video>
+ 
+ <div class="content">
+     <h1>
+      
+ <h1><p style="color:red;">Red Wine Quality</p></h1>
+ <h2><p style="color:rgb(160, 20, 207);">Fill the form</p></h2>
+ <form method="POST" action="/predict_quality">
+ 
+ <h3>
+     <label> <p style="color:rgb(11, 11, 16);">Fixed Acidity:  
+     <input type = "text" name = "fixed_acidity">
+     
+     </select> </p></label>
+     
+     
+     <label><p style="color:rgb(8, 8, 11);">Volatile Acidity: 
+     <input type = "text"name = "volatile_acidity">
+     
+     </select> </p></label>
+          
+      
+     <label><p style="color:rgb(14, 14, 20);">Citric Acid: 
+     <input type = "text" name = "citric_acid">
+     
+     </select></p></label>
+        
+ 
+     <label><p style="color:rgb(10, 10, 12);">Residual Sugar:
+     <input type = "text" name = "residual_sugar">
+    
+     </select> </p></label>
+        
+   
+ 
+     <label><p style="color:rgb(11, 11, 12);">Chlorides: 
+     <input type = "text" name = "chlorides">
+     </select></p>
+ </label>
+         
+ 
+         <label><p style="color:rgb(15, 15, 15);">Free sulfur dioxide: 
+         <input type = "text" name = "free_sulfur_dioxide">
+         
+         </select></p></label>
+        
+         <label><p style="color:rgb(10, 10, 10);">Total Sulfur Dioxide: 
+         <input type = "text"name = "total_sulfur_dioxide">
+         
+         </select>
+         </p></label>
+         
+     
+         <label><p style="color:rgb(17, 17, 18);">Density: 
+         <input type = "text"name = "density">
+        
+         </select></p></label>
+ 
+         
+ 
+         <label><p style="color:rgb(9, 9, 10);">PH: 
+         <input type = "text" name = "pH">
+         
+         </select></p></label>
+ 
+         
+ 
+         <label><p style="color:rgb(6, 6, 6);">Sulphates: 
+         <input type = "text" name = "sulphates">
+         
+         </select></p></label>
+     
+         
+ 
+         <label><p style="color:rgb(18, 18, 19);">Alcohol: 
+         <input type = "text" name = "alcohol">
+ 
+         </select></p></label>
+ 
+        
+         
+ 
+         <!-- <label><p style="color:rgb(11, 11, 11);">Company Size: 
+         <input type = "text" name = "company_size">
+         
+         </select>
+         </p></label>
+          -->
+ </h4>   
+         
+ 
+ <br>
+         <input type = "submit" value="SUBMIT">
+ 
+ <br>
+         <h1>
+             <strong><p style="color:red;">wine quality prediction: <b>{{prediction}}</b></strong>
+             </p>
+         </h1>
+ 
+     </div>
+        
+     </form>
+     </h1>
+ 
+     <!-- <p>Lorem ipsum dolor sit amet, an his etiam torquatos. Tollit soleat phaedrum te duo, eum cu recteque expetendis neglegentur. Cu mentitum maiestatis persequeris pro, pri ponderum tractatos ei. Id qui nemore latine molestiae, ad mutat oblique delicatissimi pro.</p> -->
+ 
+     </div>
+ 
+     <script>
+     var video = document.getElementById("myVideo");
+     var btn = document.getElementById("myBtn");
+     </script>
+ </body>
+ </html>
+ 
+ 
+ 
+ // <!-- <h1><p style="color:red;">Data Science Roles Salary</p></h1> -->
